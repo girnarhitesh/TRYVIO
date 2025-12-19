@@ -1,0 +1,55 @@
+.about-scroll-section {
+  height: 200vh; /* scroll space create karta hai */
+  background: #0b0b0b;
+  color: white;
+  padding: 0 60px;
+  position: relative;
+}
+
+.about-scroll-section .ant-row {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENT */
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 480px;
+  opacity: 0.9;
+}
+
+/* IMAGE */
+.about-image {
+  width: 100%;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-scroll-section {
+    padding: 0 30px;
+  }
+
+  .about-scroll-section .ant-row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-content {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,22 @@
+.navigation-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    /* background-color: #3f3f3f; */
+    color: white;
+    border-bottom: none;
+
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    letter-spacing: 1.2px;
+    font-size: 17px;
+}
+.navigation{
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}

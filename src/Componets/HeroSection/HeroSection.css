@@ -1,0 +1,204 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("/Background/Backgroundimg-1.avif");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.70);
+    z-index: 1;
+}
+
+.contact {
+    font-weight: 600;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    /* max-width: 1400px; */
+    margin: 0 auto;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.hero-left h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.herosection-span {
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: mistyrose;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    max-width: 550px;
+    align-self: flex-end;
+    margin-right: 0;
+}
+
+.hero-right p {
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+/* Updated BUTTON based on the video design */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    /* Video mein button ka background light-grey ya white hota hai */
+    background: #ffffff; 
+    color: #000000;
+    /* Exact padding and spacing */
+    padding: 8px 8px 8px 24px; /* Right side padding kam hai kyunki wahan icon circle hai */
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Halka border premium look ke liye */
+    cursor: pointer;
+    gap: 15px; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+/* Hover Effect: Button halka sa bada hoga */
+.hero-btn:hover {
+    background: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon Circle Styling */
+.hero-btn span {
+    width: 42px; /* Video mein circle thoda bada hai */
+    height: 42px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform 0.4s ease;
+}
+
+/* Click Animation: Ripple Effect jo aapne add kiya tha */
+.hero-btn::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.05);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+.hero-btn:active::after {
+    transform: scale(5);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Nudge Animation for Icon on Hover */
+@keyframes nudge {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.hero-btn:hover span {
+    animation: nudge 0.8s ease-in-out infinite;
+}
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding: 0 60px;
+    }
+
+    .hero-left h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-right {
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        padding: 0 40px;
+    }
+
+    .hero-left h1 {
+        font-size: 3.5rem;
+        margin-bottom: 40px;
+    }
+
+    .hero-right {
+        max-width: 100%;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        padding: 0 24px;
+    }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-right p {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .hero-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+}
