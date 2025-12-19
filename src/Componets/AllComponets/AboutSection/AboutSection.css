@@ -1,55 +1,91 @@
-.about-scroll-section {
-  height: 200vh; /* scroll space create karta hai */
-  background: #0b0b0b;
-  color: white;
-  padding: 0 60px;
-  position: relative;
+/* Scroll area */
+.about-pin-section {
+    height: 120vh;
+    /* scroll space */
+    position: relative;
 }
 
-.about-scroll-section .ant-row {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
+/* Sticky content */
+.about-content {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 60px;
+    box-sizing: border-box;
 }
 
-/* CONTENT */
-.about-content h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.about-content.static {
+    position: static;
 }
 
+/* Text */
 .about-content p {
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 480px;
-  opacity: 0.9;
+    max-width: 743px;
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    /* position: absolute; */
+    font-family: "Space Grotesk", sans-serif;
 }
 
-/* IMAGE */
+/* Scroll image from bottom to top */
 .about-image {
-  width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background-image: url("/Background/Backgroundimg-1.avif");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    will-change: transform;
 }
 
-.about-image img {
-  width: 100%;
-  border-radius: 20px;
-  object-fit: cover;
+/* BUTTON */
+.about-btn {
+    background: black;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .about-scroll-section {
-    padding: 0 30px;
-  }
+    .about-content {
+        padding: 0 40px;
+    }
 
-  .about-scroll-section .ant-row {
-    flex-direction: column;
-    justify-content: center;
-  }
+    .about-content p {
+        font-size: 1.4rem;
+    }
+}
 
-  .about-content {
-    margin-bottom: 40px;
-  }
+@media (max-width: 600px) {
+    .about-content {
+        padding: 0 24px;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+    }
 }

@@ -1,11 +1,21 @@
 .hero {
     position: relative;
     height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("/Background/Backgroundimg-1.avif");
     background-size: cover;
     background-position: center;
-    color: white;
-    overflow: hidden;
+    z-index: 0;
+    will-change: transform;
 }
 
 .overlay {
@@ -36,6 +46,12 @@
 .hero-left {
     width: 100%;
     margin-bottom: 60px;
+}
+
+
+.hero,
+.hero-content {
+    will-change: transform, filter, opacity;
 }
 
 .hero-left h1 {

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Oleo+Script:wght@400;700&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Dancing+Script:wght@400..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Oleo+Script:wght@400;700&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk&family=Varela+Round&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +23,7 @@ button {
 }
 
 .Sectionpadding {
-  padding: 3rem 3rem;
+  padding: 5rem 3rem;
 }
 
 h1,
@@ -34,4 +35,6 @@ h6 {
   /* margin-bottom: 1rem; */
   font-weight: 600;
   font-size: 2rem;
+
 }
+

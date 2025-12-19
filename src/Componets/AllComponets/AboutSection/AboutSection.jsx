@@ -1,73 +1,74 @@
-import React, { useRef, useEffect } from "react";
-import { Row, Col } from "antd";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AboutSection.css";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
     const sectionRef = useRef(null);
     const contentRef = useRef(null);
-    const imageRef = useRef(null);
+    const aboutImageRef = useRef(null);
+    const [isStatic, setIsStatic] = useState(false);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            // CONTENT: center → top
-            gsap.fromTo(
-                contentRef.current,
-                { y: 0 },
-                {
-                    y: -200,
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                }
-            );
+        gsap.fromTo(
+            contentRef.current,
+            { y: 120, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "top center",
+                    scrub: true,
+                },
+            }
+        );
 
-            // IMAGE: bottom → visible
-            gsap.fromTo(
-                imageRef.current,
-                { y: 200, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top center",
-                        end: "bottom center",
-                        scrub: true,
-                    },
-                }
-            );
-        }, sectionRef);
+        gsap.fromTo(
+            aboutImageRef.current,
+            { y: 100 },
+            {
+                y: 0,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                },
+            }
+        );
 
-        return () => ctx.revert();
+        ScrollTrigger.create({
+            trigger: aboutImageRef.current,
+            start: "top top",
+            onEnter: () => setIsStatic(true),
+            onLeaveBack: () => setIsStatic(false),
+        });
     }, []);
 
     return (
-        <section className="about-scroll-section" ref={sectionRef}>
-            <Row align="middle">
-                {/* LEFT CONTENT */}
-                <Col lg={12} md={12} sm={24} xs={24}>
-                    <div className="about-content" ref={contentRef}>
-                        <p>
-                            Hi, I'm a digital designer at Los Widvio — I bring ideas to life through bold visuals,
-                             captivating motion, and effortless user experiences.
-                        </p>
-                    </div>
-                </Col>
+        <section className="about-pin-section" ref={sectionRef}>
+            <div className={`about-content ${isStatic ? 'static' : ''}`} ref={contentRef}>
+                <p>
+                    Hi, I'm a digital designer at Los Widvio — I bring ideas
+                    to life through bold visuals, captivating motion, and
+                    effortless user experiences.
+                </p>
 
-                {/* RIGHT IMAGE */}
-                <Col lg={12} md={12} sm={24} xs={24}>
-                    <div className="about-image" ref={imageRef}>
-                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHx8MHx8fDA%3D" alt="Tryvio" />
-                    </div>
-                </Col>
-            </Row>
+                {/* BUTTON */}
+                <Link to="/about">
+                    <button className="hero-btn">
+                        About us<span><MdOutlineArrowRightAlt /></span>
+                    </button>
+                </Link>
+            </div>
+            <div className="about-image" ref={aboutImageRef} />
         </section>
     );
 };
