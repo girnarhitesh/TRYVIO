@@ -57,7 +57,7 @@ const HeroSection = () => {
                         to express individuality, confidence, and everyday comfort.
                     </p>
 
-                    <button className="hero-btn">
+                    <button className="hero-btn-hero">
                         Let's Talk <span><MdOutlineArrowRightAlt /></span>
                     </button>
                 </div>

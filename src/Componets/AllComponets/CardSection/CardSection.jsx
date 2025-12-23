@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CardSection.css";
+import SliderSection from "../SliderSection/SliderSection";
 
 const CardSection = () => {
     const services = [
@@ -23,7 +24,7 @@ const CardSection = () => {
         },
         {
             key: "mens-formal",
-            title: " Formal",
+            title: "Formal",
             img: "https://i.pinimg.com/736x/7b/d2/39/7bd239a21d52404251386526461a82c0.jpg",
             subtitle: "04",
         },
@@ -32,6 +33,7 @@ const CardSection = () => {
     const [active, setActive] = useState(services[0]);
 
     return (
+        <>
         <section className="card-section">
             <div className="card-header">
                 <span className="let-talk">↳ Let’s Talk</span>
@@ -67,6 +69,7 @@ const CardSection = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 }
 export default CardSection;

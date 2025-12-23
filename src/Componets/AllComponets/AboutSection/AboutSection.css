@@ -1,91 +1,231 @@
-/* Scroll area */
+/* =========================
+   ROOT SECTION
+========================= */
 .about-pin-section {
-    height: 120vh;
-    /* scroll space */
-    position: relative;
+  position: relative;
+  width: 100%;
+  background: #ffffff;
 }
 
-/* Sticky content */
+/* =========================
+   PINNED TEXT CONTENT
+========================= */
 .about-content {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 80px 60px;
-    box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* z-index: 10; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 60px;
+  text-align: center;
+  background: #ffffff;
 }
 
-.about-content.static {
-    position: static;
-}
-
-/* Text */
 .about-content p {
-    max-width: 743px;
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    opacity: 0.9;
-    color: black;
-    text-align: center;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-    /* position: absolute; */
-    font-family: "Space Grotesk", sans-serif;
+  max-width: 720px;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 32px;
+  color: #000;
+  font-family: "Space Grotesk", sans-serif;
 }
 
-/* Scroll image from bottom to top */
+/* =========================
+   BUTTON
+========================= */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  /* Video mein button ka background light-grey ya white hota hai */
+  background: #000000;
+  color: #fff;
+  /* Exact padding and spacing */
+  padding: 8px 8px 8px 24px;
+  /* Right side padding kam hai kyunki wahan icon circle hai */
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Halka border premium look ke liye */
+  cursor: pointer;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.hero-btn span {
+  width: 42px;
+  /* Video mein circle thoda bada hai */
+  height: 42px;
+  background: #fffafa;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: transform 0.4s ease;
+}
+
+.hero-btn:hover {
+  /* background: #f8f8f8; */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hero-btn::after {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.05);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.hero-btn:active::after {
+  transform: scale(5);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Nudge Animation for Icon on Hover */
+@keyframes nudge {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hero-btn:hover span {
+  animation: nudge 0.8s ease-in-out infinite;
+}
+
+/* =========================
+   IMAGE SCROLL BLOCKS
+========================= */
+.about-image-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+/* =========================
+   STICKY IMAGE
+========================= */
 .about-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60vh;
-    background-image: url("/Background/Backgroundimg-1.avif");
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    will-change: transform;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* BUTTON */
-.about-btn {
-    background: black;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 40px;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* =========================
+   IMAGE STYLE
+========================= */
+.about-image-1 img {
+  width: 30vw;
+  height: 60vh;
+  object-fit: cover;
+  margin-left: 10vw;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.about-image-2 img {
+  width: 30vw;
+  height: 60vh;
+  object-fit: cover;
+  margin-left: 60vw;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.about-image-3 img {
+  width: 30vw;
+  height: 60vh;
+  object-fit: cover;
+  margin-left: 10vw;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.about-image-4 img {
+  width: 30vw;
+  height: 65vh;
+  object-fit: cover;
+  margin-left: 60vw;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.about-image-5 img {
+  width: 30vw;
+  height: 65vh;
+  object-fit: cover;
+  margin-left: 30vw;
+  border-radius: 14px;
+  margin-bottom: 50px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-.about-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.85;
+@media (max-width: 1024px) {
+  .about-content {
+    padding: 0 40px;
+  }
+
+  .about-content p {
+    font-size: 1.6rem;
+  }
+
+  .about-image img {
+    width: 75vw;
+    height: 70vh;
+  }
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .about-content {
-        padding: 0 40px;
-    }
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 1.3rem;
+  }
 
-    .about-content p {
-        font-size: 1.4rem;
-    }
+  .about-image img {
+    width: 90vw;
+    height: 65vh;
+  }
 }
 
-@media (max-width: 600px) {
-    .about-content {
-        padding: 0 24px;
-    }
+@media (max-width: 480px) {
+  .about-content {
+    padding: 0 20px;
+  }
 
-    .about-content p {
-        font-size: 1.2rem;
-    }
+  .about-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
 }

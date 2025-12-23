@@ -38,3 +38,9 @@ h6 {
 
 }
 
+@media(max-width:900px){
+    .Sectionpadding{
+        padding: 2rem 1rem;
+    }
+}
+

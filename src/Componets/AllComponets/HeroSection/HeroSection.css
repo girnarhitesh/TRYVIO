@@ -86,7 +86,7 @@
     letter-spacing: 1px;
 }
 /* Updated BUTTON based on the video design */
-.hero-btn {
+.hero-btn-hero {
     display: inline-flex;
     align-items: center;
     /* Video mein button ka background light-grey ya white hota hai */
@@ -108,14 +108,14 @@
 }
 
 /* Hover Effect: Button halka sa bada hoga */
-.hero-btn:hover {
+.hero-btn-hero:hover {
     background: #f8f8f8;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Icon Circle Styling */
-.hero-btn span {
+.hero-btn-hero span {
     width: 42px; /* Video mein circle thoda bada hai */
     height: 42px;
     background: #000000;
@@ -129,7 +129,7 @@
 }
 
 /* Click Animation: Ripple Effect jo aapne add kiya tha */
-.hero-btn::after {
+.hero-btn-hero::after {
     content: "";
     position: absolute;
     background: rgba(0, 0, 0, 0.05);
@@ -145,7 +145,7 @@
     margin-top: -50px;
 }
 
-.hero-btn:active::after {
+.hero-btn-hero:active::after {
     transform: scale(5);
     opacity: 1;
     transition: 0s;
@@ -158,7 +158,7 @@
     100% { transform: translateX(0); }
 }
 
-.hero-btn:hover span {
+.hero-btn-hero:hover span {
     animation: nudge 0.8s ease-in-out infinite;
 }
 /* RESPONSIVE */
